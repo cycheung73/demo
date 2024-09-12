@@ -3,13 +3,12 @@ Initial implementation to explore requirements.
 Next refinement will separate Attributes from the application, so all the methods do not need to be static.  In addition, expand the Attributes class to hold name, modifier, and maybe even check for minimum and maxmium allowable values.
 
 Possible additional refinements, move the values for PointBuyChoices into a JSON file that is read in automatically.
-====================
+==
 compile:
   mvn clean dependency:copy-dependencies package
-
 run:
   java -cp target/attributes-<version>.jar org.csgeeks.Attributes
-====================
+==
 DESIGN
 
 attributes: a group of attributes
