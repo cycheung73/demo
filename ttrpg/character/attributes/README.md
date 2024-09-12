@@ -3,29 +3,38 @@ Initial implementation to explore requirements.
 Next refinement will separate Attributes from the application, so all the methods do not need to be static.  In addition, expand the Attributes class to hold name, modifier, and maybe even check for minimum and maxmium allowable values.
 
 Possible additional refinements, move the values for PointBuyChoices into a JSON file that is read in automatically.
-==
+---
 compile:
-  mvn clean dependency:copy-dependencies package
+- mvn clean dependency:copy-dependencies package
+
 run:
-  java -cp target/attributes-<version>.jar org.csgeeks.Attributes
-==
-DESIGN
+- java -cp target/attributes-<version>.jar org.csgeeks.Attributes
+---
+DESIGN (and random notes)
 
-attributes: a group of attributes
+attributes
+: a group of attributes
 
-attribue: contains
+attribue
+: contains
 
-name: a string
-abbreviation: 3 character representation of the name
-value: a number between 1 and 20, but cannot start off higher than 18
-modifier: derived number based on value [round((value - 10)/2)]
-description: a detailed description of the attribute
+name
+: a string
+abbreviation
+: 3 character representation of the name
+value
+: a number between 1 and 20, but cannot start off higher than 18
+modifier
+: derived number based on value [round((value - 10)/2)]
+description
+: a detailed description of the attribute
 
 mininum_value
 maximum_value
 creation_minimum
 creation_maximum
 
+---
 name		: string
 abbrev		: 3 character string
 value		: positive integer
@@ -47,7 +56,6 @@ attribute:
 
 	attribute value: D&D 5e (2024) point buy costs
 	attribute value: PF2e boosts and flaws
-
 
 
 D&D 5e (2024):
