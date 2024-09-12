@@ -4,7 +4,7 @@ build:
 	mvn clean package
 
 run:
-	java -cp target/point-buy-<version>,jar org.csgeeks.PointBuy
+	java -cp target/point-buy-<version>.jar org.csgeeks.PointBuy
 
 output:
 	pointBuyArrays.list
