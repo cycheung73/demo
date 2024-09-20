@@ -1,9 +1,9 @@
 package org.csgeeks;
 
 // input via Stream
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+// import java.io.BufferedReader;
+// import java.io.IOException;
+// import java.io.InputStreamReader;
 
 // input via Scanner
 import java.util.Scanner;
@@ -12,7 +12,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 // random number generator
-import java.util.concurrent.ThreadLocalRandom;
+// import java.util.concurrent.ThreadLocalRandom;
 
 // sorting
 import java.util.Arrays;
@@ -23,19 +23,63 @@ import java.util.Arrays;
  */
 public class Attributes 
 {
-    public static void printChoices()
-    {
-	System.out.println("  1 - standard array ([15,14,13,12,10,8])");
-	System.out.println("  2 - point buy (27 points total)");
-	System.out.println("  3 - random (4d6 drop lowest)");
+    public static final int NUMBER_OF_CHOICES = 3;
+    public static final int LENGTH = 6;
+
+    public static final int MIN = 3;
+    public static final int MAX = 18;
+
+    int[] attributes;
+
+    public Attributes() {
+	attributes = new int[LENGTH];
     }
 
-    public static void printArray(int[] array)
+    public int[] getAttributes() {
+	return attributes;
+    }
+
+    public void setAttributes(int[] attributes) {
+	int length = Math.min(this.attributes.length, attributes.length);
+	for (int i = 0; i < length; i++) {
+	    this.attributes[i] = attributes[i];
+	}
+	// error condition
+	for (int i = length; i < LENGTH; i++) {
+	    this.attributes[i] = MIN;
+	}
+    }
+
+    public int getNumberOfChoices()
+    {
+	return NUMBER_OF_CHOICES;
+    }
+
+    public String getChoiceString(int choice) {
+	String choiceStr;
+	switch (choice) {
+	case 1:
+	    choiceStr = "  1 - standard array ([15, 14, 13, 12, 10, 8])";
+	    break;
+	case 2:
+	    choiceStr = "  2 - point buy (27 points total)";
+	    break;
+	case 3:
+	    choiceStr = "  3 - random (4d6 drop lowest)";
+	    break;
+	default:
+	    choiceStr = "Invalid choice, try again";
+	    break;
+	}
+	return choiceStr;
+    }
+
+    public void printArray(int[] array)
     {
 	printArray("", array);
     }
 
-    public static void printArray(String prefix, int[] array)
+    public void printArray(String prefix, int[] array)
     {
 	String arrayFormat = String.format("%s%d, %d, %d, %d, %d, %d",
 					   prefix,
@@ -44,37 +88,29 @@ public class Attributes
 	System.out.println(arrayFormat);
     }
 
-    public static int[] getRandomArray()
+    public int[] getRandomArray()
     {
 	int[] array = new int[6];
 	for (int i = 0; i < 6; i++) {
-	    array[i] = fourRollsDropLowest(); // d6() + d6() + d6();
+	    array[i] = fourRollsDropLowest();
 	    // System.out.println("next");
 	}
 	return array;
     }
 
-    public static int d6()
+    // roll 4d6 drop the lowest
+    public int fourRollsDropLowest()
     {
-	int roll = 0;
-	Random rand = new Random();
-	roll = rand.nextInt(6) + 1; // random number between 0 and 5, plus 1
-	// roll = ThreadLocalRandom.current().nextInt(1, 6 + 1);  // random number between 1 and 6
-	// System.out.println("roll is '" + roll + "'");
-	return roll;
-    }
-
-    public static int fourRollsDropLowest()
-    {
-	int[] fourRolls = {d6(), d6(), d6(), d6()};
+	int[] fourRolls = {Dice.D6.roll(), Dice.D6.roll(), Dice.D6.roll(), Dice.D6.roll()};
 	Arrays.sort(fourRolls);
 	// for (int i = 0; i < fourRolls.length; i++) {
 	//     System.out.println(fourRolls[i]);
 	// }
-	return fourRolls[1] + fourRolls[2] + fourRolls[3];
+	return fourRolls[1] + fourRolls[2] + fourRolls[3];  // exclude fourRolls[0] (lowest)
     }
 
-    public static void assignAttributes(int[] attributes, int[] array)
+    // given an array of attribute values, assign them to specific attributes
+    public void assignAttributes(int[] array)
     {
 	// initial attributes
 	for (int i = 0; i < 6; i++) {
@@ -100,7 +136,7 @@ public class Attributes
 	}
     }
 
-    public static void printAttributes(int[] attributes)
+    public void printAttributes()
     {
 	System.out.println("STR: " + attributes[0]);
 	System.out.println("DEX: " + attributes[1]);
@@ -110,7 +146,12 @@ public class Attributes
 	System.out.println("CHA: " + attributes[5]);
     }
 
-    public static int[] selectPointBuyChoices() {
+    public int[] getStandardArrayValues() {
+	return StandardArray.VALUES;
+    }
+
+    // pick 1 out of the 64 point buy choices
+    public int[] selectPointBuyChoices() {
 	final int BLOCKS = 8;
 	final int CHOICES = PointBuyChoices.VALUES.length;
 	int block = 0;
@@ -147,66 +188,5 @@ public class Attributes
 	    }
 	}
 	return PointBuyChoices.VALUES[choice - 1];
-    }
-
-    public static void main( String[] args )
-    {
-        System.out.println("Hello, World!  This is Attributes.");
-	System.out.println("How would you like to generate your attributes?");
-
-	// get input
-	int choice = 0;
-	while ((choice < 1) || (choice > 3)) {
-	    printChoices();
-	    try {
-		// input with Stream
-		// BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		// choice = Integer.parseInt(reader.readLine());
-		
-		// input with Scanner
-		Scanner scanIn = new Scanner(System.in);
-		choice = scanIn.nextInt();
-
-		// input with Console
-		// choice = Integer.parseInt(System.console().readLine());
-	    } catch (Exception ex) {
-		System.out.println("Exception: " + ex);
-	    }
-	    if ((choice < 1) || (choice > 3)) {
-		System.out.println("Invalid choice, try again");
-	    }
-	}
-
-	System.out.println("You chose: '" + choice + "'");
-
-	int[] array;
-
-	switch (choice) {
-	case 1:
-	    // standard array
-	    array = StandardArray.VALUES;
-	    break;
-	case 2:
-	    // point buy array
-	    array = selectPointBuyChoices();
-	    break;
-	case 3:
-	    // random array
-	    array = getRandomArray();
-	    break;
-	default:
-	    // should never get here
-	    System.out.println("Should never get here, default to standard array");
-	    array = StandardArray.VALUES;
-	    break;
-	}
-	
-	System.out.println("Your attribute array is: ");
-	printArray(array);
-
-	int[] attributes = new int[6];
-	assignAttributes(attributes, array);
-
-	printAttributes(attributes);
     }
 }
