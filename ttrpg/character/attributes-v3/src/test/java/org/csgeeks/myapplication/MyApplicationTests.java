@@ -25,7 +25,7 @@ class MyApplicationTests {
 	public void getIndex() throws Exception {
 	    ResponseEntity<String> response = template.getForEntity("/", String.class);
 	    assertThat(response.getBody())
-		.isEqualTo("<!DOCTYPE HTML>\n<html>\n  <head>\n    <title>Getting Started: Serving Web Content</title>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n  </head>\n\n  <body>\n    <p>Get Standard Array <a href=\"/standard\">here</a></p>\n    <p>Get Point Buy      <a href=\"/pointbuy\">here</a></p>\n    <p>Get 4d6 drop low   <a href=\"/random\"  >here</a></p>\n  </body>\n</html>\n");
+		.isEqualTo("<!DOCTYPE HTML>\n<html>\n  <head>\n    <title>Main Menu</title>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n  </head>\n\n  <body>\n    <p><a href=\"/standard\">Standard Array</a></p>\n    <p><a href=\"/pointbuy\">Point Buy</a></p>\n    <p><a href=\"/random\">4d6 Drop Lowest</a></p>\n  </body>\n</html>\n");
 	}
 
 
