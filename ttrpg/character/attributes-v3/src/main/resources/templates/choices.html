@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+    <table id="choices">
+      <thead>
+	<tr>
+	  <th>Choice</th>
+	  <th>Attr1</th>
+	  <th>Attr2</th>
+	  <th>Attr3</th>
+	  <th>Attr4</th>
+	  <th>Attr5</th>
+	  <th>Attr6</th>
+	</tr>
+      </thead>
+      <tbody>
+	<tr th:each="choice: ${choices}">
+	  <td th:text="${choice.id}"/>
+	  <td th:text="${choice.attribute1}"/>
+	  <td th:text="${choice.attribute2}"/>
+	  <td th:text="${choice.attribute3}"/>
+	  <td th:text="${choice.attribute4}"/>
+	  <td th:text="${choice.attribute5}"/>
+	  <td th:text="${choice.attribute6}"/>
+	</tr>
+      </tbody>
+    </table>
+  </body>
+</html>
