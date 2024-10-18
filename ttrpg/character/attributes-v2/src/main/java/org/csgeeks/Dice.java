@@ -23,7 +23,7 @@ public class Dice
 
     static {
 	D4   = new Dice(4);
-	D6   = new Dice();
+	D6   = new Dice(6);
 	D8   = new Dice(8);
 	D10  = new Dice(10);
 	D12  = new Dice(12);
