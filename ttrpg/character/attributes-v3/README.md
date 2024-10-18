@@ -8,6 +8,9 @@ compile:
 run:
 - ./mvnw spring-boot:run
 - java -jar target/myapplication-<version>.jar
+
+connect:
+- open a browser to http://localhost:8080
 ---
 DESIGN (and random notes, this part is the same as attribute-v2)
 
