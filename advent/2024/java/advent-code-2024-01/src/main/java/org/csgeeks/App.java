@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.lang.Math;
 
 /**
- * Advent of Code 2024: Day 1 Puzzle 1
+ * Advent of Code 2024 #01: Day 1 Puzzle 1
  * 2 lists
  * sort lists in increasing order
  * pair entries by position
