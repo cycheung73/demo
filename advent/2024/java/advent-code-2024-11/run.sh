@@ -1,4 +1,11 @@
 #!/bin/sh
 
-#java -cp target/advent-code-2024-11-1.0-SNAPSHOT.jar org.csgeeks.App test.txt
-java -cp target/advent-code-2024-11-1.0-SNAPSHOT.jar org.csgeeks.App input.txt
+dir=`pwd`
+jar=`basename ${dir}`
+
+echo ${jar}
+
+#java -cp target/${jar}-1.0-SNAPSHOT.jar org.csgeeks.Puzzle1 test.txt 25
+java -cp target/${jar}-1.0-SNAPSHOT.jar org.csgeeks.Puzzle1 input.txt 25
+#java -cp target/${jar}-1.0-SNAPSHOT.jar org.csgeeks.Puzzle2 test.txt 25
+java -cp target/${jar}-1.0-SNAPSHOT.jar org.csgeeks.Puzzle2 input.txt 75
