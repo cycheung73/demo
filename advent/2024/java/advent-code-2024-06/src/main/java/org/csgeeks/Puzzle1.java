@@ -30,6 +30,11 @@ public class Puzzle1 {
     public static final String WALKED = "X";
 
     public static void main(String[] args) {
+	Puzzle1 puzzle1 = new Puzzle1();
+	puzzle1.run(args);
+    }
+
+    public void run(String[] args) {
         System.out.println("input file is called " + args[0]);
 	List<String[]> rows = new ArrayList<String[]>();
 
@@ -90,7 +95,7 @@ public class Puzzle1 {
 	System.out.println("total grids walked by guard " + numGridWalked);
     }
 
-    public static Position findGuard(String[][] grid) {
+    public Position findGuard(String[][] grid) {
 	Position pos = null;
 	for (int y = 0; y < grid.length; y++) {
 	    for (int x = 0; x < grid[0].length; x++) {
@@ -126,7 +131,7 @@ public class Puzzle1 {
     // > - turn right => v
     // v - turn right => <
     // < - turn right => ^
-    public static Position moveGuard(String[][] grid, Position guardPos) {
+    public Position moveGuard(String[][] grid, Position guardPos) {
 	int height = grid.length;
 	int width  = grid[0].length;
 
@@ -180,7 +185,7 @@ public class Puzzle1 {
 	return new Position(x1, y1, face1);
     }
 
-    public static int findAllWalked(String[][] grid) {
+    public int findAllWalked(String[][] grid) {
 	int count = 0;
 	for (int y = 0; y < grid.length; y++) {
 	    for (int x = 0; x < grid[0].length; x++) {

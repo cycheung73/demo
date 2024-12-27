@@ -14,6 +14,11 @@ import java.lang.Math;
  **/
 public class Puzzle1 {
     public static void main(String[] args) {
+	Puzzle1 puzzle1 = new Puzzle1();
+	puzzle1.run(args);
+    }
+
+    public void run(String[] args) {
         System.out.println("input file is called " + args[0]);
 
 	try {
@@ -58,7 +63,7 @@ public class Puzzle1 {
 	}
     }
 
-    public static boolean possibleEquation(Long equationResult, List<Long> operandList) {
+    public boolean possibleEquation(Long equationResult, List<Long> operandList) {
 	int operationLimit = (int)Math.pow(2, (operandList.size() - 1)) - 1;
 	// System.out.println("operationLimit is " + operationLimit);
 	// System.out.println("equationResult is " + equationResult);
@@ -73,7 +78,7 @@ public class Puzzle1 {
     }
 
     // operationMask: 0 is addition, 1 is multiplication; LSB is the first operation
-    public static Long applyOperation(List<Long> operandList, int operationMask) {
+    public Long applyOperation(List<Long> operandList, int operationMask) {
 	// System.out.println("applyOperation");
 	Long result = operandList.get(0);
 	for (int i = 1; i < operandList.size(); i++) {

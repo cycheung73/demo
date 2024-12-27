@@ -13,6 +13,11 @@ import java.util.List;
  **/
 public class Puzzle1 {
     public static void main(String[] args) {
+	Puzzle1 puzzle1 = new Puzzle1();
+	puzzle1.run(args);
+    }
+
+    public void run(String[] args) {
         System.out.println("input file is called " + args[0]);
 	List<String[]> rows = new ArrayList<String[]>();
 	
@@ -71,7 +76,7 @@ public class Puzzle1 {
     // 6 - diagonally from (x,y) going in the negative x and  positive y direction
     // 7 - vertically from (x,y) going in the positive y direction
     // 8 - diagonally from (x,y) going in the positive x and positive y direction
-    public static int findAllDirections(String[][] grid, String[] word, int x, int y) {
+    public int findAllDirections(String[][] grid, String[] word, int x, int y) {
 	int count = 0;
 
 	if (findDirection1(grid, word, x, y)) count++;
@@ -87,7 +92,7 @@ public class Puzzle1 {
     }
 
     // 1 - horizontally from (x,y) going in the positive x direction
-    public static boolean findDirection1(String[][] grid, String[] word, int x, int y) {
+    public boolean findDirection1(String[][] grid, String[] word, int x, int y) {
 	// System.out.println("findDirection1(" + x + "," + y + ")");
 	int width = grid[0].length;
 	int height = grid.length;
@@ -110,7 +115,7 @@ public class Puzzle1 {
     }
 
     // 2 - diagonally from (x,y) going in the positive x and negative y direction
-    public static boolean findDirection2(String[][] grid, String[] word, int x, int y) {
+    public boolean findDirection2(String[][] grid, String[] word, int x, int y) {
 	int width = grid[0].length;
 	int height = grid.length;
 	int size = word.length;
@@ -137,7 +142,7 @@ public class Puzzle1 {
     }
 
     // 3 - vertically from (x,y) going in the negative y direction
-    public static boolean findDirection3(String[][] grid, String[] word, int x, int y) {
+    public boolean findDirection3(String[][] grid, String[] word, int x, int y) {
 	int width = grid[0].length;
 	int height = grid.length;
 	int size = word.length;
@@ -159,7 +164,7 @@ public class Puzzle1 {
     }
 
     // 4 - diagonally from (x,y) going in the negative x and negative y direction
-    public static boolean findDirection4(String[][] grid, String[] word, int x, int y) {
+    public boolean findDirection4(String[][] grid, String[] word, int x, int y) {
 	int width = grid[0].length;
 	int height = grid.length;
 	int size = word.length;
@@ -186,7 +191,7 @@ public class Puzzle1 {
     }
 
     // 5 - horizontally from (x,y) going in the negative x direction
-    public static boolean findDirection5(String[][] grid, String[] word, int x, int y) {
+    public boolean findDirection5(String[][] grid, String[] word, int x, int y) {
 	int width = grid[0].length;
 	int height = grid.length;
 	int size = word.length;
@@ -208,7 +213,7 @@ public class Puzzle1 {
     }
 
     // 6 - diagonally from (x,y) going in the negative x and  positive y direction
-    public static boolean findDirection6(String[][] grid, String[] word, int x, int y) {
+    public boolean findDirection6(String[][] grid, String[] word, int x, int y) {
 	int width = grid[0].length;
 	int height = grid.length;
 	int size = word.length;
@@ -235,7 +240,7 @@ public class Puzzle1 {
     }
 
     // 7 - vertically from (x,y) going in the positive y direction
-    public static boolean findDirection7(String[][] grid, String[] word, int x, int y) {
+    public boolean findDirection7(String[][] grid, String[] word, int x, int y) {
 	int width = grid[0].length;
 	int height = grid.length;
 	int size = word.length;
@@ -257,7 +262,7 @@ public class Puzzle1 {
     }
 
     // 8 - diagonally from (x,y) going in the positive x and positive y direction
-    public static boolean findDirection8(String[][] grid, String[] word, int x, int y) {
+    public boolean findDirection8(String[][] grid, String[] word, int x, int y) {
 	int width = grid[0].length;
 	int height = grid.length;
 	int size = word.length;

@@ -16,6 +16,11 @@ import java.util.Collections;
  **/
 public class Puzzle2 {
     public static void main(String[] args) {
+	Puzzle2 puzzle2 = new Puzzle2();
+	puzzle2.run(args);
+    }
+
+    public void run(String[] args) {
         System.out.println("input file is called " + args[0]);
 	List<String[]> rowsList = new ArrayList<String[]>();
 	int  width = 0;
@@ -102,7 +107,7 @@ public class Puzzle2 {
 	}
     }
 
-    public static Map<String, List<Plot>> calculateData(String[][] gardenMap) {
+    public Map<String, List<Plot>> calculateData(String[][] gardenMap) {
 	Map<String, List<Plot>> plotList = new HashMap<String, List<Plot>>();
 
 	int height = gardenMap.length;
@@ -133,7 +138,7 @@ public class Puzzle2 {
 	return plotList;
     }
 
-    public static Plot getData(String[][] gardenMap, String[][] trackMap, int x, int y) {
+    public Plot getData(String[][] gardenMap, String[][] trackMap, int x, int y) {
 	int height = gardenMap.length;
 	int  width = gardenMap[0].length;
 
@@ -225,7 +230,7 @@ public class Puzzle2 {
 	return new Plot(area, cornersMap);
     }
 
-    public static boolean inBounds(int x, int y, int width, int height) {
+    public boolean inBounds(int x, int y, int width, int height) {
 	return ((x >= 0 && x < width) && (y >= 0 && y < height));
     }
 }

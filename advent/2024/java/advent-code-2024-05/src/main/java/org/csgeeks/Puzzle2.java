@@ -28,6 +28,11 @@ import java.util.Collections;
  **/
 public class Puzzle2 {
     public static void main(String[] args) {
+	Puzzle2 puzzle2 = new Puzzle2();
+	puzzle2.run(args);
+    }
+
+    public void run(String[] args) {
         System.out.println("input file is called " + args[0]);
 	Map<String, List<String>> rulesMap = new HashMap<String, List<String>>();
 
@@ -135,7 +140,7 @@ public class Puzzle2 {
     // return 0 if valid
     // otherwise return pageIndex where rules break
     // note: rules breakage cannot start at 0 because are no pages in front of index 0 for the rule to break
-    public static int validatePageOrder(Map<String,List<String>> rulesMap, ArrayList<String> pagesList) {
+    public int validatePageOrder(Map<String,List<String>> rulesMap, ArrayList<String> pagesList) {
 	boolean valid = true;
 	// System.out.println("pagesList.size() " + pagesList.size());
 

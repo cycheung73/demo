@@ -28,9 +28,13 @@ public class Puzzle2 {
     public static final String[] FACE = {"^", ">", "v", "<"};
     public static final String OBSTRUCTION = "#";
     public static final String NEW_OBSTRUCTION = "O";
-    public static int loop = 0;
 
     public static void main(String[] args) {
+	Puzzle2 puzzle2 = new Puzzle2();
+	puzzle2.run(args);
+    }
+
+    public void run(String[] args) {
         System.out.println("input file is called " + args[0]);
 	List<String[]> rows = new ArrayList<String[]>();
 
@@ -138,7 +142,7 @@ public class Puzzle2 {
 	System.out.println("loops " + loops);
     }
 
-    public static String[][] deepCopyGrid(String[][] grid) {
+    public String[][] deepCopyGrid(String[][] grid) {
 	String[][] clonedGrid = new String[grid.length][grid[0].length];
 	for (int j = 0; j < grid.length; j++) {
 	    clonedGrid[j] = grid[j].clone();
@@ -146,7 +150,7 @@ public class Puzzle2 {
 	return clonedGrid;
     }
 
-    public static int[][] deepCopyMove(int[][] grid) {
+    public int[][] deepCopyMove(int[][] grid) {
 	int[][] clonedGrid = new int[grid.length][grid[0].length];
 	for (int j = 0; j < grid.length; j++) {
 	    clonedGrid[j] = grid[j].clone();
@@ -154,7 +158,7 @@ public class Puzzle2 {
 	return clonedGrid;
     }
 
-    public static void printGrid(String[][] grid) {
+    public void printGrid(String[][] grid) {
 	for (String[] row : grid) {
 	    for (String pos : row) {
 		System.out.print(pos + "");
@@ -163,7 +167,7 @@ public class Puzzle2 {
 	}
     }
 
-    public static void printMove(int[][] grid) {
+    public void printMove(int[][] grid) {
 	for (int[] row : grid) {
 	    for (int move : row) {
 		System.out.print("" + move + ":");
@@ -172,7 +176,7 @@ public class Puzzle2 {
 	}
     }
 
-    public static Position findGuard(String[][] grid) {
+    public Position findGuard(String[][] grid) {
 	Position pos = null;
 	for (int y = 0; y < grid.length; y++) {
 	    for (int x = 0; x < grid[0].length; x++) {
@@ -199,12 +203,12 @@ public class Puzzle2 {
     }
 
 
-    public static Position moveGuard(String[][] grid, Position pos, int[][] move) {
+    public Position moveGuard(String[][] grid, Position pos, int[][] move) {
 	return moveMeta(grid, pos, move, true);
     }
 
 
-    public static Position moveObst(String[][] grid, Position pos) {
+    public Position moveObst(String[][] grid, Position pos) {
 	return moveMeta(grid, pos, null, false);
     }
 
@@ -219,7 +223,7 @@ public class Puzzle2 {
     // > - turn right => v
     // v - turn right => <
     // < - turn right => ^
-    public static Position moveMeta(String[][] grid, Position pos, int[][] move, boolean track) {
+    public Position moveMeta(String[][] grid, Position pos, int[][] move, boolean track) {
 	int height = grid.length;
 	int width  = grid[0].length;
 
@@ -295,7 +299,7 @@ public class Puzzle2 {
 	return new Position(x1, y1, face1);
     }
 
-    public static boolean willGuardLoop(String[][] guardGrid, int[][] guardMove, Position guardPos) {
+    public boolean willGuardLoop(String[][] guardGrid, int[][] guardMove, Position guardPos) {
 	// System.out.println("inside loop");
 	Position newGuardPos = moveGuard(guardGrid, guardPos, guardMove);
 	while ((newGuardPos != null) && (!newGuardPos.equals(guardPos))) {

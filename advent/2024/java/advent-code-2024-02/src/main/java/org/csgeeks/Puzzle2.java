@@ -19,6 +19,11 @@ import java.util.List;
  **/
 public class Puzzle2 {
     public static void main(String[] args) {
+	Puzzle2 puzzle2 = new Puzzle2();
+	puzzle2.run(args);
+    }
+
+    public void run(String[] args) {
         System.out.println("input file is called " + args[0]);
 	Scanner sc = null;
 
@@ -69,7 +74,7 @@ public class Puzzle2 {
 	}
     }
 
-    private static boolean isSafe(List<Integer> row) {
+    private boolean isSafe(List<Integer> row) {
 	Integer prev = null;
 	Boolean incr = null;
 	boolean safe = true;

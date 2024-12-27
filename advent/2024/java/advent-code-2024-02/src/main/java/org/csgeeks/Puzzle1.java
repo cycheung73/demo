@@ -15,6 +15,11 @@ import java.util.Scanner;
  **/
 public class Puzzle1 {
     public static void main(String[] args) {
+	Puzzle1 puzzle1 = new Puzzle1();
+	puzzle1.run(args);
+    }
+
+    public void run(String[] args) {
         System.out.println("input file is called " + args[0]);
 	Scanner sc = null;
 

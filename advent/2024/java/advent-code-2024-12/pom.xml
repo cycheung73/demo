@@ -4,12 +4,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.csgeeks</groupId>
-  <artifactId>advent-code-2024-23</artifactId>
+  <artifactId>advent-code-2024-12</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>advent-code-2024-23</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <name>advent-code-2024-12</name>
+  <url>https://github.com/cycheung73/demo/tree/main/advent/2024/java/advent-code-2024-12</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

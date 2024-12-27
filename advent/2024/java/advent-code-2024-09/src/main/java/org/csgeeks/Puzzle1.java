@@ -11,6 +11,11 @@ import java.util.Scanner;
  **/
 public class Puzzle1 {
     public static void main(String[] args) {
+	Puzzle1 puzzle1 = new Puzzle1();
+	puzzle1.run(args);
+    }
+
+    public void run(String[] args) {
         System.out.println("input file is called " + args[0]);
 
 	try {
@@ -41,7 +46,7 @@ public class Puzzle1 {
 	}
     }
 
-    public static void printFileBlocks(int[] fileBlocks) {
+    public void printFileBlocks(int[] fileBlocks) {
 	for (int i = 0; i < fileBlocks.length; i++) {
 	    if (fileBlocks[i] == -1) {
 		System.out.print(".");
@@ -52,7 +57,7 @@ public class Puzzle1 {
 	System.out.println();
     }
 
-    public static int[] diskMapToFileBlocks(String[] diskMap) {
+    public int[] diskMapToFileBlocks(String[] diskMap) {
 	int index = 0;
 	int fileBlockSize = 0;
 	int[] diskMapInt = new int[diskMap.length];
@@ -84,7 +89,7 @@ public class Puzzle1 {
 	return fileBlocks;
     }
 
-    public static int[] compactFileBlocks(int[] fileBlocks) {
+    public int[] compactFileBlocks(int[] fileBlocks) {
 	int endIndex = fileBlocks.length - 1;  // array from 0 to fileBlockSize-1
 	int[] compactedBlocks = new int[fileBlocks.length];
 	for (int i = 0; i < compactedBlocks.length; i++) {
@@ -108,7 +113,7 @@ public class Puzzle1 {
 	return compactedBlocks;
     }
 
-    public static long getFilesystemChecksum(int[] fileBlocks) {
+    public long getFilesystemChecksum(int[] fileBlocks) {
 	long checksum = 0;
 	for (int i = 0; i < fileBlocks.length; i++) {
 	    if (fileBlocks[i] != -1) {

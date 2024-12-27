@@ -13,6 +13,11 @@ import java.util.List;
  **/
 public class Puzzle2 {
     public static void main(String[] args) {
+	Puzzle2 puzzle2 = new Puzzle2();
+	puzzle2.run(args);
+    }
+
+    public void run(String[] args) {
         System.out.println("input file is called " + args[0]);
 	List<String[]> rows = new ArrayList<String[]>();
 	
@@ -75,7 +80,7 @@ public class Puzzle2 {
 	System.out.println("total count " + totalCount);
     }
 
-    public static int findAllBoxes(String[][] grid, String[][] box) {
+    public int findAllBoxes(String[][] grid, String[][] box) {
 	int width = grid[0].length;
 	int height = grid.length;
 
@@ -93,7 +98,7 @@ public class Puzzle2 {
     // origin is at the upper left corner.  positive x is to the right.  positive y is down.
     //
     // match box, where "." matches anything
-    public static boolean findBox(String[][] grid, String[][] box, int x, int y) {
+    public boolean findBox(String[][] grid, String[][] box, int x, int y) {
 	int gridWd = grid[0].length;
 	int gridHt = grid.length;
 

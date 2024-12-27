@@ -15,6 +15,11 @@ import java.util.HashSet;
  **/
 public class Puzzle2 {
     public static void main(String[] args) {
+	Puzzle2 puzzle2 = new Puzzle2();
+	puzzle2.run(args);
+    }
+
+    public void run(String[] args) {
         System.out.println("input file is called " + args[0]);
 	int mapWidth = 0;
 	int mapHeight = 0;
@@ -65,7 +70,7 @@ public class Puzzle2 {
 	}
     }
 
-    public static List<Point> findTrailHeads(List<List<Integer>> topographicMap) {
+    public List<Point> findTrailHeads(List<List<Integer>> topographicMap) {
 	List<Point> trailHeads = new ArrayList<Point>();
 
 	for (int y = 0; y < topographicMap.size(); y++) {
@@ -80,12 +85,12 @@ public class Puzzle2 {
 	return trailHeads;
     }
 
-    public static boolean inBounds(Point point, int width, int height) {
+    public boolean inBounds(Point point, int width, int height) {
 	return ((point.getX() >= 0 && point.getX() < width) &&
 		(point.getY() >= 0 && point.getY() < height));
     }
 
-    public static int trailRating(Point point, List<List<Integer>> topographicMap) {
+    public int trailRating(Point point, List<List<Integer>> topographicMap) {
 	int mapHeight = topographicMap.size();
 	int mapWidth  = topographicMap.get(0).size();
 

@@ -16,8 +16,12 @@ import java.util.HashSet;
  * 
  **/
 public class Puzzle1 {
-
     public static void main(String[] args) {
+	Puzzle1 puzzle1 = new Puzzle1();
+	puzzle1.run(args);
+    }
+
+    public void run(String[] args) {
         System.out.println("input file is called " + args[0]);
 
 	try {
@@ -95,7 +99,7 @@ public class Puzzle1 {
 	}
     }
 
-    public static boolean inBound(Point point, int width, int height) {
+    public boolean inBound(Point point, int width, int height) {
 	return (((point.getX() >= 0) && (point.getX() < width)) && ((point.getY() >= 0) && (point.getY() < height)));
     }
 }

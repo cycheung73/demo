@@ -15,6 +15,11 @@ import java.util.HashMap;
  **/
 public class Puzzle1 {
     public static void main(String[] args) {
+	Puzzle1 puzzle1 = new Puzzle1();
+	puzzle1.run(args);
+    }
+
+    public void run(String[] args) {
         System.out.println("input file is called " + args[0]);
 	List<String[]> rowsList = new ArrayList<String[]>();
 	int  width = 0;
@@ -70,7 +75,7 @@ public class Puzzle1 {
 	}
     }
 
-    public static Map<String, List<Point>> calculateData(String[][] gardenMap) {
+    public Map<String, List<Point>> calculateData(String[][] gardenMap) {
 	Map<String, List<Point>> plotList = new HashMap<String, List<Point>>();
 
 	int height = gardenMap.length;
@@ -101,7 +106,7 @@ public class Puzzle1 {
 	return plotList;
     }
 
-    public static Point getArea(String[][] gardenMap, String[][] trackMap, int x, int y) {
+    public Point getArea(String[][] gardenMap, String[][] trackMap, int x, int y) {
 	int height = gardenMap.length;
 	int  width = gardenMap[0].length;
 
@@ -152,7 +157,7 @@ public class Puzzle1 {
 	return new Point(area, perim);
     }
 
-    public static boolean inBounds(int x, int y, int width, int height) {
+    public boolean inBounds(int x, int y, int width, int height) {
 	return ((x >= 0 && x < width) && (y >= 0 && y < height));
     }
 }
