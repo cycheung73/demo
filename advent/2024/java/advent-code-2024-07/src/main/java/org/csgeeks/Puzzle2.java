@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.lang.Math;
 
 /**
- * Advent of Code 2024 #14: Day 7 Puzzle 2
+ * Advent of Code 2024: Day 7 Puzzle 2
  * 
  **/
 public class Puzzle2 {

@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- * Advent of Code 2024 #17: Day 9 Puzzle 1
+ * Advent of Code 2024: Day 9 Puzzle 1
  * 
  **/
 public class Puzzle1 {

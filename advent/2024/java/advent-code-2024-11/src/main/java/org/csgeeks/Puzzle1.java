@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- * Advent of Code 2024 #21: Day 11 Puzzle 1
+ * Advent of Code 2024: Day 11 Puzzle 1
  * 
  **/
 public class Puzzle1 {

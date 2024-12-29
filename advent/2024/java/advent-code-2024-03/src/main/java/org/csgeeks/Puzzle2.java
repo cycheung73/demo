@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 /**
- * Advent of Code 2024 #06: Day 3 Puzzle 2
+ * Advent of Code 2024: Day 3 Puzzle 2
  * 
  **/
 public class Puzzle2 {

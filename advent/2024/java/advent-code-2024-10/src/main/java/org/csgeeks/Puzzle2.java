@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.HashSet;
 
 /**
- * Advent of Code 2024 #20: Day 10 Puzzle 2
+ * Advent of Code 2024: Day 10 Puzzle 2
  * 
  **/
 public class Puzzle2 {

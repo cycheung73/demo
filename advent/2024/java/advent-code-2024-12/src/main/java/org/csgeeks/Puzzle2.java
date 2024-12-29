@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Collections;
 
 /**
- * Advent of Code 2024 #24: Day 12 Puzzle 2
+ * Advent of Code 2024: Day 12 Puzzle 2
  * 
  **/
 public class Puzzle2 {

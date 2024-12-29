@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.Collections;
 
 /**
- * Advent of Code 2024 #10: Day 5 Puzzle 2
+ * Advent of Code 2024: Day 5 Puzzle 2
  * 
  * page order rules, one per line
  * X|Y

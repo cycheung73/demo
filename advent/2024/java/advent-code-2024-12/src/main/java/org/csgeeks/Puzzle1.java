@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 /**
- * Advent of Code 2024 #23: Day 12 Puzzle 1
+ * Advent of Code 2024: Day 12 Puzzle 1
  * 
  **/
 public class Puzzle1 {

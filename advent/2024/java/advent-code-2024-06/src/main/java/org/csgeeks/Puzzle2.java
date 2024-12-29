@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Arrays;
 
 /**
- * Advent of Code 2024 #12: Day 6 Puzzle 2
+ * Advent of Code 2024: Day 6 Puzzle 2
  *
  * given a map:
  * [^][>][v][<] - guard facing up [0], right [1], down [2], left [3]

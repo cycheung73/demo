@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Advent of Code 2024 #09: Day 5 Puzzle 1
+ * Advent of Code 2024: Day 5 Puzzle 1
  * 
  * page order rules, one per line
  * X|Y

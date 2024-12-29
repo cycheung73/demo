@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- * Advent of Code 2024 #03: Day 2 Puzzle 1
+ * Advent of Code 2024: Day 2 Puzzle 1
  * rows of numbers
  * row is safe if:
  * numbers are all increasing or all decreasing

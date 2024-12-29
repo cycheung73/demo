@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Advent of Code 2024 #04: Day 2 Puzzle 2
+ * Advent of Code 2024: Day 2 Puzzle 2
  * rows of numbers
  * row is safe if:
  * numbers are all increasing or all decreasing

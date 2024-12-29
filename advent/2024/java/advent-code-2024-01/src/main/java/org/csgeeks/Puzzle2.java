@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Advent of Code 2024 #02: Day 1 Puzzle 2
+ * Advent of Code 2024: Day 1 Puzzle 2
  * 2 lists
  * similarity score is the number of times an entry exists in other list
  * calculate similarity score total of left list over the right list

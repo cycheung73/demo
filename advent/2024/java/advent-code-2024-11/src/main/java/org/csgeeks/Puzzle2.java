@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 /**
- * Advent of Code 2024 #22: Day 11 Puzzle 2
+ * Advent of Code 2024: Day 11 Puzzle 2
  * 
  **/
 public class Puzzle2 {
